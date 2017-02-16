@@ -1,8 +1,9 @@
 import React from 'react'
+import IssueList from '../containers/IssueList'
 
 const App = () => (
   <div>
-    Decide App
+    <IssueList />
   </div>
 )
 
