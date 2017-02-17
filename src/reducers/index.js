@@ -1,19 +1,8 @@
-import { ADD_ISSUE } from '../actions/transformations'
+import { combineReducers } from 'redux'
+import { reducers } from 'decide-shared'
 
-const initialState = {
-  issues: {}
-}
-
-function decideApp (state = initialState, action) {
-  switch (action.type) {
-    case ADD_ISSUE:
-      return {
-        ...state,
-        ...{ issues: { ...state.issues, ...{ [action.payload.id]: action.payload } } }
-      }
-    default:
-      return state
-  }
-}
+const decideApp = combineReducers({
+  ...reducers
+})
 
 export default decideApp

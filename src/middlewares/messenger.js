@@ -5,7 +5,11 @@ const messenger = store => next => action => {
     return next(action)
   }
 
-  socket.emit('action', action)
+  if (action.type === 'TAKE_SNAPSHOT') {
+    socket.emit('snapshot')
+  } else {
+    socket.emit('action', action)
+  }
 }
 
 export default messenger
