@@ -7,7 +7,9 @@ const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 
 
 const storePromise = new Promise((resolve) => {
-  socket.on('init', (initialState) => {
+  socket.on('authenticated', ({ jwt, initialState }) => {
+    window.localStorage.setItem('jwt', jwt)
+
     const store = createStore(decideApp, initialState, composeEnhancers(
       applyMiddleware(messenger)
     ))

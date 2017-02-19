@@ -10,4 +10,16 @@ socket
     console.info('You were disconnected!')
   })
 
+// Temp!
+window.emit = socket.emit.bind(socket)
+
+socket.on('error', (error) => {
+  console.log(error)
+})
+
+socket.on('server-error', (error) => {
+  console.log(error)
+})
+
 export default socket
+
