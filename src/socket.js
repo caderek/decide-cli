@@ -1,6 +1,6 @@
 import * as io from 'socket.io-client'
 import store from './store'
-import { setUserData } from './actions'
+import { setUserData, showAuthenticationPanel } from './actions'
 import jwtDecode from 'jwt-decode'
 
 const socket = io.connect('http://localhost:2007', { reconnect: true })
@@ -16,6 +16,8 @@ socket
 
       store.dispatch(setUserData(jwtPayload.user))
       socket.emit('get-initial-state', null, jwt)
+    } else {
+      store.dispatch(showAuthenticationPanel)
     }
   })
   .on('disconnect', () => {
