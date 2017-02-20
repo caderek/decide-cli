@@ -1,14 +1,14 @@
 import React from 'react'
+import { Card, CardTitle, CardText } from 'material-ui/Card'
 
-const Issue = ({ title, description }) => (
-  <div style={{
-    borderBottom: 'solid 1px #aaa',
-    padding: '10px',
-    fontSize: '13px'
-  }}>
-    <h4 className="title">{title}</h4>
-    <p className="description">{description}</p>
-  </div>
+const Issue = ({ title, totalPriority, userPriority, ratesCount }) => (
+  <Card>
+    <CardTitle title={title} />
+    <CardText>
+      <p>Total priority: {totalPriority || '---'} | Rates count: {ratesCount}</p>
+      <p>User priority: {userPriority || '---'}</p>
+    </CardText>
+  </Card>
 )
 
 export default Issue

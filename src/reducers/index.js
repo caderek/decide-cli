@@ -1,12 +1,25 @@
 import { reducers } from 'decide-shared'
+import authentication from './authentication'
 
-const decideApp = (state = {}, action) => {
+const initialState = {
+  authentication: {
+    user: null,
+    signedIn: false
+  }
+}
+
+const decideApp = (state = initialState, action) => {
   if (action.type === 'INIT_STATE') {
-    return action.payload
+    return { ...state, ...action.payload }
   }
 
   return {
-    issues: reducers.issues(state.issues, action)
+    ...state,
+    ...{
+      issues: reducers.issues(state.issues, action),
+      priorities: reducers.priorities(state.priorities, action),
+      authentication: authentication(state.authentication, action)
+    }
   }
 }
 

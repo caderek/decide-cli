@@ -2,7 +2,9 @@ import React from 'react'
 import Issue from './Issue'
 
 const IssueList = ({ issues }) => (
-  <div>
+  <div style={{
+    padding: '5px'
+  }}>
     {issues.map(issue =>
       <Issue
         key={issue.id}
