@@ -8,7 +8,7 @@ const messenger = store => next => action => {
   if (action.type === 'TAKE_SNAPSHOT') {
     socket.emit('snapshot')
   } else {
-    socket.emit('action', action)
+    socket.emit('action', action, window.localStorage.getItem('jwt'))
   }
 }
 

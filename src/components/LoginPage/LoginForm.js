@@ -1,10 +1,8 @@
 import React, { Component } from 'react'
-import TextField from 'material-ui/TextField'
-import RaisedButton from 'material-ui/RaisedButton'
-import Dialog from 'material-ui/Dialog'
-import socket from '../socket'
+import socket from '../../socket'
+import $ from './LoginForm.scss'
 
-class AuthenticationPanel extends Component {
+class LoginForm extends Component {
   constructor (props) {
     super(props)
     this.state = {
@@ -16,7 +14,9 @@ class AuthenticationPanel extends Component {
     this.authenticate = this.authenticate.bind(this)
   }
 
-  authenticate () {
+  authenticate (event) {
+    event.preventDefault()
+
     socket.emit('authenticate', {
       user: this.state.user,
       password: this.state.password
@@ -30,25 +30,24 @@ class AuthenticationPanel extends Component {
 
   render () {
     return (
-      <Dialog open={this.props.open}>
-        <TextField
-          floatingLabelText="User"
+      <form className={$.loginForm} onSubmit={this.authenticate} >
+        <input
+          type='text'
+          placeholder='user'
           value={this.state.user}
           onChange={this.handleChange}
+          autoFocus
         />
-        <br/>
-        <TextField
-          type="password"
-          floatingLabelText="Password"
+        <input
+          type='password'
+          placeholder='password'
           value={this.state.password}
           onChange={this.handleChange}
         />
-        <br/>
-        <RaisedButton label="OK" primary onClick={this.authenticate} />
-      </Dialog>
+        <input type='submit' value='log in' />
+      </form>
     )
   }
 }
 
-
-export default AuthenticationPanel
+export default LoginForm

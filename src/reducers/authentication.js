@@ -1,20 +1,20 @@
 import {
-  SHOW_AUTHENTICATION_PANEL,
+  SHOW_LOGIN_PAGE,
   SET_USER_DATA
 } from '../actions'
 
 function authentication (state = {}, action) {
   switch (action.type) {
-    case SHOW_AUTHENTICATION_PANEL:
+    case SHOW_LOGIN_PAGE:
       return {
         ...state,
-        ...{ panel: true }
+        ...{ authenticated: false }
       }
     case SET_USER_DATA:
       return {
         ...state,
         ...{
-          panel: action.payload.panel,
+          authenticated: true,
           user: action.payload.user
         }
       }

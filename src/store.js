@@ -8,7 +8,6 @@ const store = createStore(decideApp, composeEnhancers(
   applyMiddleware(messenger)
 ))
 
-
-
+window.state = store.getState.bind(store)
 
 export default store

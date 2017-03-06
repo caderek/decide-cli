@@ -4,7 +4,7 @@ import authentication from './authentication'
 const initialState = {
   authentication: {
     user: null,
-    panel: false
+    authenticated: Boolean(window.localStorage.getItem('jwt'))
   }
 }
 

@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css?family=Fira+Mono');
+@import url('https://fonts.googleapis.com/css?family=PT+Sans');
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  color: #333333;
+}
+
+body {
+  margin: 0;
+  font-family: "Fira Mono";
+  background-color: #F8F8F8;
+}
+
+::placeholder {
+  color: #BDBDBD;
+}

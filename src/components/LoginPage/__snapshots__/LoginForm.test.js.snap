@@ -1,0 +1,26 @@
+exports[`test LoginForm renders correctly 1`] = `
+<div
+  className="loginForm">
+  <input
+    placeholder="user"
+    type="text" />
+  <input
+    placeholder="password"
+    type="password" />
+  <button>
+    log in
+  </button>
+</div>
+`;
+
+exports[`test LoginInput renders correctly 1`] = `
+<input
+  placeholder="bar"
+  type="foo" />
+`;
+
+exports[`test LoginSubmit renders correctly 1`] = `
+<button>
+  log in
+</button>
+`;

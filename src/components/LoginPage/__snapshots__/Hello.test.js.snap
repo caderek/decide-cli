@@ -1,0 +1,15 @@
+exports[`test renders correctly 1`] = `
+<div
+  className="hello">
+  <img
+    alt="Logo"
+    src="logo.png" />
+  <h2>
+    Prioritize your
+     
+    ideas with your
+     
+    team.
+  </h2>
+</div>
+`;

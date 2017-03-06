@@ -1,7 +1,8 @@
 import * as io from 'socket.io-client'
 import store from './store'
-import { setUserData, showAuthenticationPanel } from './actions'
+import { setUserData, showLoginPage } from './actions'
 import jwtDecode from 'jwt-decode'
+import { browserHistory } from 'react-router'
 
 const socket = io.connect('http://localhost:2007', { reconnect: true })
 
@@ -17,7 +18,7 @@ socket
       store.dispatch(setUserData(jwtPayload.user))
       socket.emit('get-initial-state', null, jwt)
     } else {
-      store.dispatch(showAuthenticationPanel)
+      store.dispatch(showLoginPage)
     }
   })
   .on('disconnect', () => {
@@ -25,6 +26,7 @@ socket
   })
   .on('authenticated', (jwt) => {
     const jwtPayload = jwtDecode(jwt)
+    browserHistory.push('/')
 
     store.dispatch(setUserData(jwtPayload.user))
     window.localStorage.setItem('jwt', jwt)

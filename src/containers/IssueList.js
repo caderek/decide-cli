@@ -1,9 +1,10 @@
 import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
+import { actions } from 'decide-shared'
 import IssueList from '../components/IssueList'
 import values from 'lodash/values'
 import groupBy from 'lodash/groupBy'
 import mapValues from 'lodash/mapValues'
-
 
 const prepareIssues = (issues, priorities, user) => {
   const groupedPriorities = groupBy(values(priorities), 'issueId')
@@ -30,4 +31,7 @@ const mapStateToProps = (state) => ({
   issues: prepareIssues(state.issues, state.priorities, state.authentication.user)
 })
 
-export default connect(mapStateToProps)(IssueList)
+const { addPriority } = actions
+const mapDispatchToProps = (dispatch) => bindActionCreators({ addPriority }, dispatch)
+
+export default connect(mapStateToProps, mapDispatchToProps)(IssueList)

@@ -1,0 +1,104 @@
+.issue {
+  position: relative;
+  padding: 15px;
+  background-color: white;
+  margin-bottom: 10px;
+  border-left: solid 9px #72889A;
+  cursor: pointer;
+
+  &:hover {
+    border-color: #5B6D7D;
+  }
+
+  &.selected {
+    border-color: #F6A623;
+  }
+
+  h2 {
+    font-family: 'PT Sans';
+    font-size: 16px;
+    font-weight: normal;
+    margin-bottom: 20px;
+
+    .author {
+      color: #71889B;
+      font-weight: bold;
+    }
+  }
+
+  .average, .priorityLabel {
+    font-size: 14px;
+    color: #71889B;
+  }
+
+  input[type=radio] {
+    opacity: 1;
+    display: none;
+  }
+
+  label > span {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    margin-left: 3px;
+    width: 21px;
+    height: 21px;
+    border: solid 2px;
+    border-radius: 10px;
+
+    &.negative {
+      border-color: #F68A23;
+    }
+
+    &.neutral {
+      border-color: #9B9B9B;
+    }
+
+    &.positive {
+      border-color: #316792;
+    }
+
+    &:hover {
+      border-width: 3px;
+    }
+  }
+
+  :checked + span.negative {
+    background-color: #F68A23;
+    cursor: default;
+
+    &:hover {
+      background-color: #F68A23;
+    }
+  }
+
+  :checked + span.neutral {
+    background-color: #9B9B9B;
+    cursor: default;
+
+    &:hover {
+      background-color: #9B9B9B;
+    }
+  }
+
+  :checked + span.positive {
+    background-color: #316792;
+    cursor: default;
+
+    &:hover {
+      background-color: #316792;
+    }
+  }
+
+  .priorityLabel {
+    position: absolute;
+    right: 170px;
+    bottom: 20px;
+  }
+
+  .priorities {
+    position: absolute;
+    right: 15px;
+    bottom: 15px;
+  }
+}

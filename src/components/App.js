@@ -1,16 +1,20 @@
 import React from 'react'
 import injectTapEventPlugin from 'react-tap-event-plugin'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
-import AuthenticationPanel from '../containers/AuthenticationPanel'
 import IssueList from '../containers/IssueList'
 import Menu from '../containers/Menu'
+import { browserHistory } from 'react-router'
+import store from '../store'
+
+if (store.getState().authentication.authenticated === false) {
+  browserHistory.push('/login')
+}
 
 injectTapEventPlugin()
 
 const App = () => (
   <MuiThemeProvider>
     <div>
-      <AuthenticationPanel />
       <Menu />
       <IssueList />
     </div>

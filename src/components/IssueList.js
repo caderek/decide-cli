@@ -1,7 +1,7 @@
 import React from 'react'
 import Issue from './Issue'
 
-const IssueList = ({ issues }) => (
+const IssueList = ({ issues, addPriority }) => (
   <div style={{
     padding: '5px'
   }}>
@@ -9,6 +9,7 @@ const IssueList = ({ issues }) => (
       <Issue
         key={issue.id}
         {...issue}
+        addPriority={addPriority}
       />
     )}
   </div>
