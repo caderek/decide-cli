@@ -1,0 +1,47 @@
+.editor {
+  background-color: white;
+  $border: solid 1px #C0C1C0;
+  text-align: right;
+
+  textarea {
+    width: 100%;
+    padding: 10px;
+    font-family: 'Fira Mono';
+    font-size: 16px;
+    resize: none;
+  }
+
+  .title {
+    border: $border;
+
+    &:focus {
+      border-color: #F6A623;
+    }
+  }
+
+  .description {
+    border: $border;
+    border-top: 0px;
+    height: 320px;
+
+    &:focus {
+      border-color: #F6A623;
+    }
+  }
+
+  input[type=submit] {
+    padding: 10px;
+    width: 100px;
+    text-align: center;
+    font-family: 'Fira Mono';
+    font-size: 24px;
+    color: white;
+    background-color: #F6A623;
+    margin: 10px 0;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #F68A23;
+    }
+  }
+}

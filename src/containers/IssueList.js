@@ -13,16 +13,18 @@ const prepareIssues = (issues, priorities, user) => {
     (priorities.reduce((result, priority) => result + priority.priority, 0) / priorities.length).toFixed(2)
   )
 
-  const result = values(issues).map((issue) => {
-    return {
-      ...issue,
-      ...{
-        totalPriority: totalPriorities[issue.id],
-        ratesCount: groupedPriorities[issue.id] ? groupedPriorities[issue.id].length : 0,
-        userPriority: priorities[`${issue.id}.${user}`] ? priorities[`${issue.id}.${user}`].priority : undefined
+  const result = values(issues)
+    .map((issue) => {
+      return {
+        ...issue,
+        ...{
+          totalPriority: totalPriorities[issue.id],
+          ratesCount: groupedPriorities[issue.id] ? groupedPriorities[issue.id].length : 0,
+          userPriority: priorities[`${issue.id}.${user}`] ? priorities[`${issue.id}.${user}`].priority : undefined
+        }
       }
-    }
-  })
+    })
+    .reverse()
 
   return result
 }

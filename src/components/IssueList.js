@@ -1,10 +1,9 @@
 import React from 'react'
 import Issue from './Issue'
+import $ from './IssueList.scss'
 
 const IssueList = ({ issues, addPriority }) => (
-  <div style={{
-    padding: '5px'
-  }}>
+  <div className={$.issueList}>
     {issues.map(issue =>
       <Issue
         key={issue.id}

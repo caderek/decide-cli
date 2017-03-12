@@ -1,21 +1,15 @@
 import React from 'react'
-import {
-  Toolbar,
-  ToolbarGroup,
-  ToolbarTitle
-} from 'material-ui/Toolbar'
 import { browserHistory } from 'react-router'
+import $ from './Menu.scss'
 
 const Menu = ({ user }) => (
-  <Toolbar>
-    <ToolbarTitle text='Decide App' />
-    <ToolbarGroup>
-      {user !== null ? <span>User: {user}</span> : null} | <span onClick={() => {
-        window.localStorage.removeItem('jwt')
-        browserHistory.push('/login')
-      }} style={{ cursor: 'pointer' }}>log out</span>
-    </ToolbarGroup>
-  </Toolbar>
+  <div className={$.menu}>
+    <span>Decide App | </span>
+    {user !== null ? <span>User: {user}</span> : null} | <span onClick={() => {
+      window.localStorage.removeItem('jwt')
+      browserHistory.push('/login')
+    }} style={{ cursor: 'pointer' }}>log out</span>
+  </div>
 )
 
 export default Menu

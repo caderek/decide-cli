@@ -18,3 +18,16 @@ body {
 ::placeholder {
   color: #BDBDBD;
 }
+
+textarea, input, button {
+  outline: none;
+}
+
+:focus {
+  outline-color: transparent;
+  outline-style: none;
+}
+
+input:focus, textarea:focus {
+  border-color: #F6A623;
+}
