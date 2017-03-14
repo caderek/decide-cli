@@ -1,7 +1,8 @@
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { actions } from 'decide-shared'
-import IssueList from '../components/IssueList'
+import IssueList from '../components/IssueList/IssueList'
+import { toggleIssue, changePanelView } from '../actions'
 import values from 'lodash/values'
 import groupBy from 'lodash/groupBy'
 import mapValues from 'lodash/mapValues'
@@ -34,6 +35,11 @@ const mapStateToProps = (state) => ({
 })
 
 const { addPriority } = actions
-const mapDispatchToProps = (dispatch) => bindActionCreators({ addPriority }, dispatch)
+const mapDispatchToProps = (dispatch) =>
+  bindActionCreators({
+    addPriority,
+    toggleIssue,
+    changePanelView
+  }, dispatch)
 
 export default connect(mapStateToProps, mapDispatchToProps)(IssueList)

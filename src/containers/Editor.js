@@ -1,10 +1,11 @@
 import { connect } from 'react-redux'
-import Editor from '../components/Details/Editor'
+import Editor from '../components/SidePanel/Editor'
 import { bindActionCreators } from 'redux'
 import { actions } from 'decide-shared'
+import { changePanelView } from '../actions'
 
 const { addIssue } = actions
 
-const mapDispatchToProps = (dispatch) => bindActionCreators({ addIssue }, dispatch)
+const mapDispatch = (dispatch) => bindActionCreators({ addIssue, changePanelView }, dispatch)
 
-export default connect(null, mapDispatchToProps)(Editor)
+export default connect(null, mapDispatch)(Editor)

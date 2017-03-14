@@ -1,10 +1,15 @@
 import { reducers } from 'decide-shared'
 import authentication from './authentication'
+import currentView from './currentView'
 
 const initialState = {
   authentication: {
     user: null,
     authenticated: Boolean(window.localStorage.getItem('jwt'))
+  },
+  currentView: {
+    selectedIssues: [],
+    panelView: 'preview' // preview / editor
   }
 }
 
@@ -18,7 +23,8 @@ const decideApp = (state = initialState, action) => {
     ...{
       issues: reducers.issues(state.issues, action),
       priorities: reducers.priorities(state.priorities, action),
-      authentication: authentication(state.authentication, action)
+      authentication: authentication(state.authentication, action),
+      currentView: currentView(state.currentView, action)
     }
   }
 }

@@ -1,8 +1,12 @@
 import { connect } from 'react-redux'
-import Menu from '../components/Menu'
+import { bindActionCreators } from 'redux'
+import Menu from '../components/Menu/Menu'
+import { changePanelView } from '../actions'
 
-const mapStateToProps = (state) => ({
+const mapState = (state) => ({
   user: state.authentication.user
 })
 
-export default connect(mapStateToProps)(Menu)
+const mapDispatch = (dispatch) => bindActionCreators({ changePanelView }, dispatch)
+
+export default connect(mapState, mapDispatch)(Menu)

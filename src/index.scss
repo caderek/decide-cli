@@ -31,3 +31,21 @@ textarea, input, button {
 input:focus, textarea:focus {
   border-color: #F6A623;
 }
+
+ul, ol {
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+
+p {
+  margin-bottom: 20px;
+}
+
+pre {
+  margin-bottom: 20px;
+  border-left: solid 1px #979797;
+  padding: 15px 0 15px 20px;
+  font-family: 'Fira Mono';
+  font-size: 14px;
+  color: #979797;
+}

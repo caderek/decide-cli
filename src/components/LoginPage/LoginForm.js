@@ -24,8 +24,7 @@ class LoginForm extends Component {
   }
 
   handleChange ({ target }) {
-    const field = target.type === 'text' ? 'user' : 'password'
-    this.setState({ [field]: target.value })
+    this.setState({ [target.name]: target.value })
   }
 
   render () {
@@ -33,6 +32,7 @@ class LoginForm extends Component {
       <form className={$.loginForm} onSubmit={this.authenticate} >
         <input
           type='text'
+          name='user'
           placeholder='user'
           value={this.state.user}
           onChange={this.handleChange}
@@ -40,6 +40,7 @@ class LoginForm extends Component {
         />
         <input
           type='password'
+          name='password'
           placeholder='password'
           value={this.state.password}
           onChange={this.handleChange}
