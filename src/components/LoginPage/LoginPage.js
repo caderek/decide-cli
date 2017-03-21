@@ -1,5 +1,5 @@
 import React from 'react'
-import LoginForm from './LoginForm'
+import LoginForm from '../../containers/LoginForm'
 import Hello from './Hello'
 import $ from './LoginPage.scss'
 

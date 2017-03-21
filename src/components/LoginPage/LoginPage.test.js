@@ -1,7 +1,11 @@
 import React from 'react'
+import { Provider } from 'react-redux'
+import { createStore } from 'redux'
 import { snap } from '../testHelpers'
 import LoginPage from './LoginPage'
 
-test.skip('renders correctly', () => snap(
-  <LoginPage authenticated />
+test('renders correctly', () => snap(
+  <Provider store={createStore(() => {})}>
+    <LoginPage authenticated />
+  </Provider>
 ))

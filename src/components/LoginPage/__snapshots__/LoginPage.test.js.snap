@@ -1,6 +1,11 @@
 exports[`test renders correctly 1`] = `
 <div
-  className="loginPage">
+  className="loginPage"
+  style={
+    Object {
+      "display": "none",
+    }
+  }>
   <div>
     <div
       className="hello">
@@ -15,18 +20,26 @@ exports[`test renders correctly 1`] = `
         team.
       </h2>
     </div>
-    <div
-      className="loginForm">
+    <form
+      className="loginForm"
+      onSubmit={[Function]}>
       <input
+        autoFocus={true}
+        name="user"
+        onChange={[Function]}
         placeholder="user"
-        type="text" />
+        type="text"
+        value="" />
       <input
+        name="password"
+        onChange={[Function]}
         placeholder="password"
-        type="password" />
-      <button>
-        log in
-      </button>
-    </div>
+        type="password"
+        value="" />
+      <input
+        type="submit"
+        value="log in" />
+    </form>
   </div>
 </div>
 `;

@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import socket from '../../socket'
 import $ from './LoginForm.scss'
 
 class LoginForm extends Component {
@@ -16,11 +15,7 @@ class LoginForm extends Component {
 
   authenticate (event) {
     event.preventDefault()
-
-    socket.emit('authenticate', {
-      user: this.state.user,
-      password: this.state.password
-    })
+    this.props.authenticate(this.state.user, this.state.password)
   }
 
   handleChange ({ target }) {

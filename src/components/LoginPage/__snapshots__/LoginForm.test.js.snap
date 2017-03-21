@@ -1,26 +1,22 @@
 exports[`test LoginForm renders correctly 1`] = `
-<div
-  className="loginForm">
+<form
+  className="loginForm"
+  onSubmit={[Function]}>
   <input
+    autoFocus={true}
+    name="user"
+    onChange={[Function]}
     placeholder="user"
-    type="text" />
+    type="text"
+    value="" />
   <input
+    name="password"
+    onChange={[Function]}
     placeholder="password"
-    type="password" />
-  <button>
-    log in
-  </button>
-</div>
-`;
-
-exports[`test LoginInput renders correctly 1`] = `
-<input
-  placeholder="bar"
-  type="foo" />
-`;
-
-exports[`test LoginSubmit renders correctly 1`] = `
-<button>
-  log in
-</button>
+    type="password"
+    value="" />
+  <input
+    type="submit"
+    value="log in" />
+</form>
 `;
