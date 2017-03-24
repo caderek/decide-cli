@@ -1,18 +1,19 @@
 @import url('https://fonts.googleapis.com/css?family=Fira+Mono');
-@import url('https://fonts.googleapis.com/css?family=PT+Sans');
+@import url('https://fonts.googleapis.com/css?family=Catamaran:100,400&subset=latin-ext');
+@import './colorPalette';
 
 * {
   margin: 0;
   padding: 0;
   border: 0;
   box-sizing: border-box;
-  color: #333333;
+  color: $darkGray;
 }
 
 body {
   margin: 0;
   font-family: "Fira Mono";
-  background-color: #F8F8F8;
+  background-color: $lightGray;
 }
 
 ::placeholder {
@@ -29,7 +30,7 @@ textarea, input, button {
 }
 
 input:focus, textarea:focus {
-  border-color: #F6A623;
+  border-color: $orange;
 }
 
 ul, ol {

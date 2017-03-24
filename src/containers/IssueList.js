@@ -31,7 +31,8 @@ const prepareIssues = (issues, priorities, user) => {
 }
 
 const mapStateToProps = (state) => ({
-  issues: prepareIssues(state.issues, state.priorities, state.authentication.user)
+  issues: prepareIssues(state.issues, state.priorities, state.authentication.user),
+  selected: state.currentView.selectedIssues[0]
 })
 
 const { addPriority } = actions

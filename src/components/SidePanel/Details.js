@@ -2,6 +2,20 @@ import React from 'react'
 import ReactMarkdown from 'react-markdown'
 import $ from './Details.scss'
 
+const Rate = ({ author, priority }) => {
+  const classType =
+    (priority > 0 && 'positive') ||
+    (priority === 0 && 'neutral') ||
+    (priority < 0 && 'negative')
+
+  return (
+    <div className={$.rate}>
+      {author}
+      <div className={`${$.priority} ${$[classType]}`}>{priority}</div>
+    </div>
+  )
+}
+
 const Details = ({ issue, rates }) => {
   if (issue) {
     return (
@@ -22,8 +36,8 @@ const Details = ({ issue, rates }) => {
 
         <section>
           <h3 className={$.sectionTitle}>Rates:</h3>
-          <div>
-            {rates.map(rate => <p key={rate.id}>{rate.author}: {rate.priority}</p>)}
+          <div className={$.rates}>
+            {rates.map(rate => <Rate key={rate.id} author={rate.author} priority={rate.priority} />)}
           </div>
         </section>
       </div>

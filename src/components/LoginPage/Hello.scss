@@ -1,8 +1,10 @@
+@import '../../colorPalette';
+
 .hello {
   text-align: center;
 
   h2 {
-    color: #70889C;
+    color: $steel;
     margin-top: 15px;
     margin-bottom: 80px;
   }

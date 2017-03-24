@@ -1,3 +1,5 @@
+@import '../../colorPalette';
+
 .issue {
   position: relative;
   padding: 15px;
@@ -11,24 +13,24 @@
   }
 
   &.selected {
-    border-color: #F6A623;
+    border-color: $orange;
   }
 
   h2 {
-    font-family: 'PT Sans';
+    font-family: 'Catamaran';
     font-size: 16px;
-    font-weight: normal;
+    font-weight: 100;
     margin-bottom: 20px;
 
     .author {
-      color: #71889B;
-      font-weight: bold;
+      color: $steel;
+      font-weight: 400;
     }
   }
 
   .average, .priorityLabel {
     font-size: 14px;
-    color: #71889B;
+    color: $steel;
   }
 
   input[type=radio] {
@@ -47,15 +49,15 @@
     border-radius: 10px;
 
     &.negative {
-      border-color: #F68A23;
+      border-color: $orange;
     }
 
     &.neutral {
-      border-color: #9B9B9B;
+      border-color: $gray;
     }
 
     &.positive {
-      border-color: #316792;
+      border-color: $blue;
     }
 
     &:hover {
@@ -64,41 +66,41 @@
   }
 
   :checked + span.negative {
-    background-color: #F68A23;
+    background-color: $orange;
     cursor: default;
 
     &:hover {
-      background-color: #F68A23;
+      background-color: $orange;
     }
   }
 
   :checked + span.neutral {
-    background-color: #9B9B9B;
+    background-color: $gray;
     cursor: default;
 
     &:hover {
-      background-color: #9B9B9B;
+      background-color: $gray;
     }
   }
 
   :checked + span.positive {
-    background-color: #316792;
+    background-color: $blue;
     cursor: default;
 
     &:hover {
-      background-color: #316792;
+      background-color: $blue;
     }
   }
 
   .priorityLabel {
     position: absolute;
     right: 170px;
-    bottom: 20px;
+    bottom: -4px;
   }
 
   .priorities {
     position: absolute;
     right: 15px;
-    bottom: 15px;
+    bottom: 10px;
   }
 }

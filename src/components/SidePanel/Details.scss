@@ -1,5 +1,8 @@
+@import '../../colorPalette';
+
 .details {
-  font-family: 'PT Sans';
+  font-family: 'Catamaran';
+  font-weight: 100;
   font-size: 16px;
 
   section {
@@ -7,21 +10,57 @@
   }
 
   .title {
-    font-weight: normal;
+    font-weight: 400;
     font-size: 20px;
     margin-bottom: 20px;
   }
 
   .inlineTitle {
-    color: #71889B;
+    color: $steel;
     font-size: 16px;
-    font-weight: normal;
+    font-weight: 400;
   }
 
   .sectionTitle {
-    color: #71889B;
+    color: $steel;
     font-size: 16px;
-    font-weight: normal;
+    font-weight: 400;
     margin-bottom: 20px;
+  }
+
+  .rates {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .rate {
+    background: $lightGray;
+    flex-basis: 49%;
+    position: relative;
+    padding: 5px 50px 5px 10px;
+
+    .priority {
+      width: 40px;
+      text-align: center;
+      color: $lightGray;
+      font-family: 'Fira Mono';
+      display: inline-block;
+      position: absolute;
+      right: 0;
+      top: 0;
+      padding: 9px 10px;
+    }
+
+    .positive {
+      background: $blue;
+    }
+
+    .negative {
+      background: $orange;
+    }
+
+    .neutral {
+      background: $gray;
+    }
   }
 }

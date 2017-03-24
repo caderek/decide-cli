@@ -1,3 +1,5 @@
+@import '../../colorPalette';
+
 .loginForm {
   max-width: 330px;
   margin: auto;
@@ -12,7 +14,7 @@
     outline: none;
 
     &:focus {
-      border-color: #F6A623;
+      border-color: $orange;
     }
   }
 
@@ -20,7 +22,7 @@
     font-size: 24px;
     font-family: "Fira Code";
     background-color: #72889A;
-    color: #F8F8F8;
+    color: $lightGray;
     padding: 10px;
     width: 100%;
     outline: none;

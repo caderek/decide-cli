@@ -1,3 +1,5 @@
+@import '../../colorPalette';
+
 .editor {
   background-color: white;
   $border: solid 1px #C0C1C0;
@@ -15,7 +17,7 @@
     border: $border;
 
     &:focus {
-      border-color: #F6A623;
+      border-color: $orange;
     }
   }
 
@@ -25,7 +27,7 @@
     height: 320px;
 
     &:focus {
-      border-color: #F6A623;
+      border-color: $orange;
     }
   }
 
@@ -36,12 +38,12 @@
     font-family: 'Fira Mono';
     font-size: 24px;
     color: white;
-    background-color: #F6A623;
+    background-color: $orange;
     margin: 10px 0;
     cursor: pointer;
 
     &:hover {
-      background-color: #F68A23;
+      background-color: $orange;
     }
   }
 }

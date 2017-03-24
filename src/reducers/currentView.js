@@ -17,8 +17,8 @@ function currentView (state = {}, action) {
 function toggleIssue (state, payload) {
   const { selectedIssues } = state
   const newSelectedIssues = selectedIssues.includes(payload.issueId)
-    ? selectedIssues.filter(issueId => issueId !== payload.issueId)
-    : [...selectedIssues, payload.issueId]
+    ? []
+    : [payload.issueId]
 
   return Object.assign({}, state, { selectedIssues: newSelectedIssues })
 }
